@@ -102,7 +102,7 @@ for(let i=0;i<10;i++){
     this.add.text(
     180,
     20,
-    '❤️ Baebuu & Bubu: Our Memories ❤️',
+    '🖤💙🖤 Baebuu & Bubu: Our Memories 🖤💙🖤',
     {   
         fontSize:'28px',
         color:'#000'
@@ -194,7 +194,7 @@ for(let i = 0; i < 20; i++){
     let heart = this.add.text(
         Math.random() * 800,
         Math.random() * 600,
-        '❤️',
+        '💙🖤',
         {
             fontSize: '18px'
         }
@@ -278,7 +278,7 @@ memoryText.setText(
 );
 
 showMemory(
-    "❤️ First Ride & Proposal",
+    "🖤💙🖤 First Ride & Proposal🖤💙🖤",
     "This was where our beautiful journey truly began.",
     "assets/memories/ride.jpg"
 );
@@ -385,7 +385,7 @@ function showEnding() {
             font-family:Arial;
             padding:20px;
         ">
-            <h1>❤️ Baebuu & Bubu ❤️</h1>
+            <h1>🖤💙🖤 Baebuu & Bubu 🖤💙🖤</h1>
             <h2>You found all 5 memories!</h2>
             <p>
                 Thank you for every ride, every trip,
@@ -394,7 +394,7 @@ function showEnding() {
             <p>
                 Our story isn't over yet...
             </p>
-            <h2>❤️ To be continued ❤️</h2>
+            <h2>🖤💙🖤 To be continued 🖤💙🖤</h2>
         </div>
     `;
 }
