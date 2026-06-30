@@ -38,8 +38,14 @@ function closeMemory(){
 }
 const config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: 800,
+        height: 600
+    },
+
     backgroundColor: '#87CEEB',
 
     physics: {
@@ -112,86 +118,103 @@ for(let i=0;i<10;i++){
         }
     );
     // First Kiss memory
+   
+
 this.add.rectangle(
     400,
     100,
-    80,
-    80,
-    0xff0000
+    70,
+    70,
+    0xffffff,
+    0.25
 );
 
 this.add.text(
-    375,
-    190,
+    380,
+    80,
     '💋',
     {
         fontSize: '40px'
     }
 );
     // Long Hug memory
+
+
 this.add.rectangle(
     150,
     500,
-    80,
-    80,
-    0xff69b4
+    70,
+    70,
+    0xffffff,
+    0.25
 );
 
 this.add.text(
-    125,
-    490,
+    130,
+    480,
     '🤗',
     {
         fontSize: '40px'
     }
 );
     // Daruth Game memory
+
 this.add.rectangle(
     150,
     100,
-    80,
-    80,
-    0x800080
+    70,
+    70,
+    0xffffff,
+    0.25
 );
 
 this.add.text(
-    125,
-    190,
+    130,
+    80,
     '🎮',
     {
         fontSize: '40px'
     }
 );
+    // Bike memory
 
-    // Bike memory location
-    this.add.rectangle(650, 300, 80, 80, 0x0000ff);
+this.add.rectangle(
+    650,
+    300,
+    70,
+    70,
+    0xffffff,
+    0.25
+);
 
-    this.add.text(
-        625,
-        390,
-        '🚲',
-        {
-            fontSize: '40px'
-        }
-    );
+this.add.text(
+    630,
+    280,
+    '🚲',
+    {
+        fontSize: '40px'
+    }
+);  
     // Long trip location
-    this.add.rectangle(
-        650,
-        100,
-        80,
-        80,
-        0xffa500
-    );
+    
 
-    this.add.text(
-        625,
-        190,
-        '🚌',
-        {
-            fontSize: '40px'
-        }
-    );
+this.add.rectangle(
+    650,
+    100,
+    70,
+    70,
+    0xffffff,
+    0.25
+);
 
+this.add.text(
+    630,
+    80,
+    '🚌',
+    {
+        fontSize: '40px'
+    }
+);
     // Player
     player = this.add.rectangle(100, 300, 50, 50, 0xff0000);
 
@@ -305,7 +328,7 @@ showMemory(
     "assets/memories/ride.jpg"
 );
     }
-    if (
+    if (memoryShown &&
     !tripShown &&
     player.x > 600 &&
     player.x < 700 &&
@@ -325,7 +348,7 @@ showMemory(
     "assets/memories/trip.jpg"
 );
     }
-    if (
+    if (tripShown &&
     !daruthShown &&
     player.x > 100 &&
     player.x < 200 &&
@@ -346,7 +369,7 @@ showMemory(
         "assets/memories/daruth.jpg"
     );
 }
-if (
+if (daruthShown &&
     !hugShown &&
     player.x > 100 &&
     player.x < 200 &&
@@ -367,7 +390,7 @@ if (
         "assets/memories/hug.jpg"
     );
 }
-if (
+if (hugShown &&
     !kissShown &&
     player.x > 350 &&
     player.x < 450 &&
