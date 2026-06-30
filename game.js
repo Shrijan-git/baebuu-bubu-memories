@@ -120,101 +120,56 @@ for(let i=0;i<10;i++){
     // First Kiss memory
    
 
-this.add.rectangle(
-    400,
-    100,
-    70,
-    70,
-    0xffffff,
-    0.25
-);
+this.add.rectangle(400,100,70,70,0xffffff,0.15);
 
 this.add.text(
-    380,
-    80,
+    400,
+    100,
     '💋',
-    {
-        fontSize: '40px'
-    }
-);
+    {fontSize:'36px'}
+).setOrigin(0.5);
     // Long Hug memory
 
 
-this.add.rectangle(
+this.add.rectangle(150,500,70,70,0xffffff,0.15);
+
+this.add.text(
     150,
     500,
-    70,
-    70,
-    0xffffff,
-    0.25
-);
-
-this.add.text(
-    130,
-    480,
     '🤗',
-    {
-        fontSize: '40px'
-    }
-);
+    {fontSize:'36px'}
+).setOrigin(0.5);
     // Daruth Game memory
 
-this.add.rectangle(
+this.add.rectangle(150,100,70,70,0xffffff,0.15);
+
+this.add.text(
     150,
     100,
-    70,
-    70,
-    0xffffff,
-    0.25
-);
-
-this.add.text(
-    130,
-    80,
     '🎮',
-    {
-        fontSize: '40px'
-    }
-);
+    {fontSize:'36px'}
+).setOrigin(0.5);
     // Bike memory
 
-this.add.rectangle(
-    650,
-    300,
-    70,
-    70,
-    0xffffff,
-    0.25
-);
+this.add.rectangle(650,300,70,70,0xffffff,0.15);
 
 this.add.text(
-    630,
-    280,
+    650,
+    300,
     '🚲',
-    {
-        fontSize: '40px'
-    }
-);  
+    {fontSize:'36px'}
+).setOrigin(0.5);
     // Long trip location
     
 
-this.add.rectangle(
-    650,
-    100,
-    70,
-    70,
-    0xffffff,
-    0.25
-);
+this.add.rectangle(650,100,70,70,0xffffff,0.15);
 
 this.add.text(
-    630,
-    80,
+    650,
+    100,
     '🚌',
-    {
-        fontSize: '40px'
-    }
-);
+    {fontSize:'36px'}
+).setOrigin(0.5);
     // Player
     player = this.add.rectangle(100, 300, 50, 50, 0xff0000);
 
