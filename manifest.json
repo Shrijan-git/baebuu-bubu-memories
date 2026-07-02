@@ -1,0 +1,17 @@
+{
+  "name": "Baebuu & Bubu Memory Quest",
+  "short_name": "Memory Quest",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#24324d",
+  "theme_color": "#24324d",
+  "description": "A cozy memory adventure game.",
+  "icons": [
+    {
+      "src": "assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,73 +1,83 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Baebuu & Bubu ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#24324d">
+    <link rel="manifest" href="manifest.json">
+    <title>Baebuu & Bubu Memories Adventure</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Phaser -->
     <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
 </head>
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
 <body>
-    <div id="memory-card" style="display:none;">     
-    <h2>❤️ First Ride & Proposal</h2>
+    <main id="gameShell">
+        <section id="gamePanel">
+            <div id="game"></div>
+        </section>
 
-    <img
-        id="memory-image"
-        src=""
-        width="300"
-    >
+        <aside id="journalPanel">
+            <div class="panelHeader">
+                <span>Memory Journal</span>
+                <button id="closeJournalBtn" class="smallButton" aria-label="Close journal">x</button>
+                <strong id="memoryCount">0/5</strong>
+            </div>
+            <ol id="journalList"></ol>
+            <div id="clueBox">
+                <small>Current clue</small>
+                <p id="clueText">Begin at the bicycle path where everything started.</p>
+            </div>
+        </aside>
+    </main>
 
-    <p id="memory-text"></p>
+    <div id="startScreen" class="screenOverlay">
+        <div class="startBadge">Baebuu & Bubu</div>
+        <h1>Memory Quest</h1>
+        <p>Explore the little world, follow each clue, and recover every hidden piece of the story.</p>
+        <div class="startActions">
+            <button id="startBtn">Continue Adventure</button>
+            <button id="newGameBtn" class="secondaryButton">New Game</button>
+        </div>
+    </div>
 
-    <button onclick="closeMemory()">
-        Continue
-    </button>
-</div>
-<div id="controls">
-    <button id="left">⬅️</button>
-    <button id="up">⬆️</button>
-    <button id="down">⬇️</button>
-    <button id="right">➡️</button>
-</div>
-<audio
-    id="bgMusic"
-    loop
->
-    <source
-        src="assets/music/our_song.mp3"
-        type="audio/mpeg">
-</audio>
+    <div id="memoryCard" class="modal" hidden>
+        <div class="modalBody">
+            <button id="closeMemoryBtn" class="iconButton" aria-label="Close memory">x</button>
+            <span id="memoryStep"></span>
+            <h2 id="memoryTitle"></h2>
+            <img id="memoryImage" src="" alt="">
+            <p id="memoryText"></p>
+            <button id="continueBtn">Continue</button>
+        </div>
+    </div>
 
-<button
-    id="musicBtn"
-    style="
-        position:absolute;
-        top:10px;
-        right:10px;
-        z-index:1000;
-    ">
-    🎵 Play Music
-</button>
-    <div id="startScreen">
+    <div id="endingScreen" class="screenOverlay" hidden>
+        <div class="startBadge">Quest Complete</div>
+        <h1>You found every memory</h1>
+        <p>Every ride, trip, laugh, hug, and kiss is safe in the journal now. The story can keep growing from here.</p>
+        <button id="restartBtn">Play Again</button>
+    </div>
 
-    <h1>❤️ Baebuu & Bubu ❤️</h1>
+    <div id="touchControls" aria-label="Movement controls">
+        <button id="up" aria-label="Move up">&#9650;</button>
+        <div>
+            <button id="left" aria-label="Move left">&#9664;</button>
+            <button id="searchBtn" aria-label="Search memory">Search</button>
+            <button id="right" aria-label="Move right">&#9654;</button>
+        </div>
+        <button id="down" aria-label="Move down">&#9660;</button>
+    </div>
 
-    <h3>Our Memories Adventure</h3>
+    <button id="journalToggle">Journal</button>
+    <button id="musicBtn">Play Music</button>
+    <audio id="bgMusic" loop>
+        <source src="assets/music/our_song.mp3" type="audio/mpeg">
+    </audio>
 
-    <p>
-        Every memory with you
-        became part of my life.
-    </p>
-
-    <button id="startBtn">
-        Begin Our Journey ❤️
-    </button>
-
-</div>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+        }
+    </script>
     <script src="game.js"></script>
-
 </body>
 </html>
